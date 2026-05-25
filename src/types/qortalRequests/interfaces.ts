@@ -620,6 +620,11 @@ export interface OpenNewTabQortalRequest extends BaseRequest {
   qortalLink: string;
 }
 
+export interface OpenUserLookupQortalRequest extends BaseRequest {
+  action: 'OPEN_USER_LOOKUP';
+  user: string;
+}
+
 export interface ShowActionsQortalRequest extends BaseRequest {
   action: 'SHOW_ACTIONS';
 }
