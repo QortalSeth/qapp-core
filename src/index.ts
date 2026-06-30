@@ -76,3 +76,4 @@ export { LoaderListStatus } from './common/ListLoader';
 export { Coin } from './types/qortalRequests/types';
 export { useIdentifiers } from './hooks/useIdentifiers';
 export { useResources } from './hooks/useResources';
+export { useProgressStore, useVideoStore, useIsPlaying } from './state/video';
