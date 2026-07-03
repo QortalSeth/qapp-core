@@ -368,7 +368,7 @@ export const VolumeControl = ({
   );
 };
 
-const speeds = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
+const speeds = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4];
 
 export const PlaybackRate = ({
   playbackRate,
@@ -512,7 +512,7 @@ export const PlayBackMenu = ({
           boxShadow: isFromDrawer ? 'relative' : 5,
           p: 1,
           minWidth: 225,
-          height: 300,
+          height: 400,
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -552,6 +552,7 @@ export const PlayBackMenu = ({
             flexDirection: 'column',
             flexGrow: 1,
             overflow: 'auto',
+            overscrollBehavior: 'contain',
             '::-webkit-scrollbar-track': {
               backgroundColor: 'transparent',
             },
