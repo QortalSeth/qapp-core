@@ -70,7 +70,7 @@ export { ImagePicker } from './common/ImagePicker';
 export { useNameSearch } from './hooks/useNameSearch';
 export { Resource } from './hooks/useResources';
 export { Service, QortalGetMetadata } from './types/interfaces/resources';
-export { ListItem } from './state/cache';
+export { ListItem, useCacheStore } from './state/cache';
 export { SymmetricKeys } from './utils/encryption';
 export { LoaderListStatus } from './common/ListLoader';
 export { Coin } from './types/qortalRequests/types';
