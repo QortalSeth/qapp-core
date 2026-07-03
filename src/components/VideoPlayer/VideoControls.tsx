@@ -23,6 +23,7 @@ import { formatTime } from '../../utils/time.js';
 import { CustomFontTooltip } from './CustomFontTooltip.js';
 import { useEffect, useRef, useState } from 'react';
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
+import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 const buttonPaddingBig = '6px';
 const buttonPaddingSmall = '4px';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -405,6 +406,31 @@ export const PlaybackRate = ({
         </IconButton>
       </CustomFontTooltip>
     </>
+  );
+};
+
+export const ObjectFitButton = ({
+  toggleTheaterMode,
+  isScreenSmall,
+}: any) => {
+  const { t } = useLibTranslation();
+
+  return (
+    <CustomFontTooltip
+      title={t('video.toggle_object_fit')}
+      placement="bottom"
+      arrow
+    >
+      <IconButton
+        sx={{
+          color: 'white',
+          padding: isScreenSmall ? buttonPaddingSmall : buttonPaddingBig,
+        }}
+        onClick={() => toggleTheaterMode()}
+      >
+        <AspectRatioIcon />
+      </IconButton>
+    </CustomFontTooltip>
   );
 };
 

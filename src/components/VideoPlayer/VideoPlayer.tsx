@@ -685,8 +685,6 @@ async function playEncryptedVideoWithServiceWorker({
   return videoId; // Return videoId for cleanup later
 }
 
-type StretchVideoType = 'contain' | 'fill' | 'cover' | 'none' | 'scale-down';
-
 export type TimelineAction =
   | {
       type: 'SEEK';
@@ -778,7 +776,6 @@ export const VideoPlayer = ({
   styling,
 }: VideoPlayerProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [videoObjectFit] = useState<StretchVideoType>('contain');
   const { isPlaying, setIsPlaying } = useIsPlaying();
   const isOnTimeline = useRef(false);
   const [width, setWidth] = useState(0);
@@ -828,7 +825,8 @@ export const VideoPlayer = ({
     decreaseSpeed,
     toggleMute,
     isFullscreen,
-    toggleObjectFit,
+    toggleTheaterMode,
+    videoObjectFit,
     controlsHeight,
     setProgressRelative,
     changeVolume,
@@ -939,7 +937,7 @@ export const VideoPlayer = ({
       reloadVideo,
       togglePlay,
       setProgressRelative,
-      toggleObjectFit,
+      toggleTheaterMode,
       increaseSpeed,
       decreaseSpeed,
       changeVolume,
@@ -951,7 +949,7 @@ export const VideoPlayer = ({
       reloadVideo,
       togglePlay,
       setProgressRelative,
-      toggleObjectFit,
+      toggleTheaterMode,
       increaseSpeed,
       decreaseSpeed,
       changeVolume,
@@ -1093,7 +1091,7 @@ export const VideoPlayer = ({
     hideTimeout.current = setTimeout(() => {
       if (isOnTimeline?.current) return;
       setShowControls(false);
-    }, 2500); // 3s of inactivity
+    }, 5000); // 5s of inactivity
   };
 
   const handleMouseMove = () => {
@@ -1774,6 +1772,7 @@ export const VideoPlayer = ({
             toggleMute={toggleMute}
             openPlaybackMenu={openPlaybackMenu}
             togglePictureInPicture={togglePictureInPicture}
+            toggleTheaterMode={toggleTheaterMode}
             setLocalProgress={setLocalProgress}
             isOnTimeline={isOnTimeline}
             styling={styling}
