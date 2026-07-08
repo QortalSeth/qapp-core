@@ -1040,7 +1040,7 @@ export const VideoPlayer = ({
       ...videoStyles?.video,
       objectFit: videoObjectFit,
       backgroundColor: '#000000',
-      height: isFullscreen ? 'calc(100vh - 40px)' : '100%',
+      height: isFullscreen ? '100dvh' : '100%',
       width: '100%',
       cursor: showControls ? 'default' : 'none',
     };
@@ -1792,6 +1792,8 @@ export const VideoPlayer = ({
             setLocalProgress={setLocalProgress}
             setProgressRelative={setProgressRelative}
             toggleFullscreen={toggleFullscreen}
+            toggleTheaterMode={toggleTheaterMode}
+            playbackRate={playbackRate}
             openPlaybackMenu={openPlaybackMenu}
             openSubtitleManager={openSubtitleManager}
             togglePlay={togglePlay}
