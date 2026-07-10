@@ -1038,13 +1038,13 @@ export const VideoPlayer = ({
   const videoStylesVideo = useMemo(() => {
     return {
       ...videoStyles?.video,
-      objectFit: videoObjectFit,
+      objectFit: startPlay ? videoObjectFit : 'contain',
       backgroundColor: '#000000',
       height: isFullscreen ? '100dvh' : '100%',
       width: '100%',
       cursor: showControls ? 'default' : 'none',
     };
-  }, [videoObjectFit, isFullscreen, showControls]);
+  }, [videoObjectFit, isFullscreen, showControls, startPlay]);
 
   const handleEnded = useCallback(
     (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
