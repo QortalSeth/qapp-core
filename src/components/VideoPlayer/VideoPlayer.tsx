@@ -981,7 +981,7 @@ export const VideoPlayer = ({
   useVideoPlayerHotKeys(hotkeyHandlers);
 
   const updateProgress = useCallback(() => {
-    if (!isPlaying || !isPlayerInitialized) return;
+    if (!isPlayerInitialized) return;
     const player = playerRef?.current;
     if (!player || typeof player?.currentTime !== 'function') return;
 
@@ -990,7 +990,7 @@ export const VideoPlayer = ({
       setProgress(videoLocation, currentTime);
       setLocalProgress(currentTime);
     }
-  }, [videoLocation, isPlaying, isPlayerInitialized]);
+  }, [videoLocation, isPlayerInitialized]);
 
   useEffect(() => {
     if (videoLocation) {
