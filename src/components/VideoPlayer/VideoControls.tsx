@@ -181,8 +181,8 @@ export const ProgressSlider = ({
 
   return (
     <Box
-      position="relative"
       sx={{
+        position: 'relative',
         width: '100%',
         padding: isVideoPlayerSmall ? '0px' : '0px 10px',
       }}
@@ -501,7 +501,6 @@ export const PlayBackMenu = ({
         ref={ref}
         tabIndex={-1}
         onBlur={handleBlur}
-        bgcolor={alpha('#181818', 0.98)}
         sx={{
           position: isFromDrawer ? 'relative' : 'absolute',
           bottom: isFromDrawer ? 'relative' : 60,
@@ -517,6 +516,7 @@ export const PlayBackMenu = ({
           display: 'flex',
           flexDirection: 'column',
           zIndex: 10,
+          bgcolor: alpha('#181818', 0.98),
         }}
       >
         <Box
